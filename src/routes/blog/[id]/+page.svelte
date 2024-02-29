@@ -13,18 +13,20 @@
   <meta name="author" content="artegoser" />
 </svelte:head>
 
-<div class="container mx-auto flex flex-col justify-center">
-  <h1
-    class="bg-gradient-to-br from-red-500 to-yellow-500 bg-clip-text text-transparent box-decoration-clone h1 pt-10 text-center"
+<div class="container mx-auto flex flex-col">
+  <div
+    class="bg-gradient-to-br from-red-500 to-yellow-500 bg-clip-text text-transparent box-decoration-clone h1 mt-10 text-center"
   >
     {meta.title}
-  </h1>
-
-  <div class="flex justify-center items-center pt-10">
-    <Author date={meta.datePublished} {readingTime} />
   </div>
 
-  <div class="p-10 prose-lg break-words">
+  <div class="flex justify-center mt-10">
+    <Author
+      dots={[new Date(meta.datePublished).toLocaleDateString(), readingTime]}
+    />
+  </div>
+
+  <div class="mt-10 mx-2 prose-lg break-words">
     {@html html}
   </div>
 </div>
