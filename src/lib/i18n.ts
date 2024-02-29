@@ -13,4 +13,6 @@ init({
   initialLocale: getLocaleFromNavigator(),
 });
 
-await waitLocale();
+export async function wait() {
+  return await waitLocale();
+}

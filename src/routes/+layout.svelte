@@ -10,11 +10,13 @@
   import css from "highlight.js/lib/languages/css";
   import javascript from "highlight.js/lib/languages/javascript";
   import typescript from "highlight.js/lib/languages/typescript";
+  import bash from "highlight.js/lib/languages/bash";
 
   hljs.registerLanguage("xml", xml); // for HTML
   hljs.registerLanguage("css", css);
   hljs.registerLanguage("javascript", javascript);
   hljs.registerLanguage("typescript", typescript);
+  hljs.registerLanguage("bash", bash);
   storeHighlightJs.set(hljs);
 
   // Floating UI for Popups
@@ -29,8 +31,6 @@
   import { storePopup } from "@skeletonlabs/skeleton";
   storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
-  // i18n initialization
-  import "$lib/i18n";
   import { _ } from "svelte-i18n";
 </script>
 
