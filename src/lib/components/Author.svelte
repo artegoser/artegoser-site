@@ -10,7 +10,7 @@
 </script>
 
 <Avatar src={img} width="h-8" rounded="rounded-full" initials={name} />
-<a href={link} class="font-bold ml-2">{name}</a>
+<a href={link} class="strong-text">{name}</a>
 
 {#each dots || [] as dot}
   <span class="mx-3 font-bold text-slate-500">·</span>

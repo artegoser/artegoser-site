@@ -2,9 +2,11 @@
   export let data;
 
   import Author from "$lib/components/Author.svelte";
-  import { _, locale } from "svelte-i18n";
+  import { onMount } from "svelte";
+  import { storeHighlightJs } from "@skeletonlabs/skeleton";
+  import { _ } from "svelte-i18n";
 
-  const { id, html, meta, readingTime } = data;
+  const { html, meta, readingTime } = data;
 </script>
 
 <svelte:head>

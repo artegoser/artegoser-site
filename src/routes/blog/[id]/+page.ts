@@ -1,20 +1,10 @@
-import type { Dot, IAuthor } from "$lib/types.js";
+import type { IBlogPostMetaData } from "$lib/types.js";
 import { parseMarkdown, readingTime } from "$lib/utils";
-
-interface IMetaData {
-  title: string;
-  tags: string;
-  datePublished: string;
-  coAuthors?: IAuthor[];
-  dots?: Dot[];
-  seoTitle?: string;
-  seoDescription?: string;
-}
 
 interface IPageData {
   id: string;
   html: string;
-  meta: IMetaData;
+  meta: IBlogPostMetaData;
   readingTime: number;
 }
 
@@ -41,7 +31,7 @@ export async function load({ params }): Promise<IPageData> {
   return {
     id: params.id,
     html: parsed.html,
-    meta: parsed.metadata as IMetaData,
+    meta: parsed.metadata as IBlogPostMetaData,
     readingTime: readingTime(text),
   };
 }

@@ -13,6 +13,15 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import { matter } from "vfile-matter";
+import rehypeHighlight from "rehype-highlight";
+
+// Highlight JS
+import xml from "highlight.js/lib/languages/xml"; // for HTML
+import css from "highlight.js/lib/languages/css";
+import javascript from "highlight.js/lib/languages/javascript";
+import typescript from "highlight.js/lib/languages/typescript";
+import bash from "highlight.js/lib/languages/bash";
+import json from "highlight.js/lib/languages/json";
 
 export async function parseMarkdown(markdown: string) {
   const result = await unified()
@@ -21,6 +30,16 @@ export async function parseMarkdown(markdown: string) {
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeStringify)
+    .use(rehypeHighlight, {
+      languages: {
+        xml,
+        css,
+        javascript,
+        typescript,
+        bash,
+        json,
+      },
+    })
     .use(() => (tree, file) => {
       matter(file);
     })

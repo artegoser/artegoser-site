@@ -3,6 +3,7 @@ import type { Config } from "tailwindcss";
 import forms from "@tailwindcss/forms";
 import typography from "@tailwindcss/typography";
 import { skeleton } from "@skeletonlabs/tw-plugin";
+import maskImage from "tailwind-gradient-mask-image";
 
 export default {
   darkMode: "class",
@@ -17,6 +18,7 @@ export default {
     extend: {},
   },
   plugins: [
+    maskImage,
     forms,
     typography,
     skeleton({

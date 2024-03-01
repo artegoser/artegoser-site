@@ -11,3 +11,15 @@ export interface IAuthor {
   img?: string;
   dots?: Dot[];
 }
+
+export interface IBlogPostMetaData {
+  title: string;
+  tags: string;
+  datePublished: string;
+  cover?: string;
+  coAuthors?: IAuthor[];
+  dots?: Dot[];
+  seoTitle?: string;
+  seoDescription?: string;
+  id?: string; // only in index.json posts
+}
