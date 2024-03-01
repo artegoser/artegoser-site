@@ -47,7 +47,7 @@
     </div>
   {/each}
 
-  <div class="mt-10 mx-2 prose-lg break-words">
+  <div class="mt-10 mx-2 prose-lg break-words" id="content">
     {@html html}
   </div>
 </div>

@@ -6,10 +6,14 @@
   const { posts } = data;
 </script>
 
-<div class="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+<div
+  class="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2"
+>
   {#each posts as post}
-    <a href="/blog/{post.id}"
-      ><div class="block card card-hover p-4 m-2 h-full">
+    <a href="/blog/{post.id}">
+      <div
+        class="block card p-4 m-2 h-full variant-ghost-surface hover:variant-ghost-primary transition"
+      >
         <header class="card-header flex flex-col">
           <img
             class="h-64 overflow-hidden rounded-lg object-cover gradient-mask-b-0"
@@ -36,7 +40,7 @@
             />
           {/each}
         </footer>
-      </div></a
-    >
+      </div>
+    </a>
   {/each}
 </div>

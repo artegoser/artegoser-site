@@ -8,7 +8,7 @@ interface IPageData {
   readingTime: number;
 }
 
-export async function load({ params }): Promise<IPageData> {
+export async function load({ fetch, params }): Promise<IPageData> {
   const text = await fetch(
     `https://raw.githubusercontent.com/artegoser/artegoser-blog/main/posts/${params.id}.md`
   ).then((res) => res.text());
