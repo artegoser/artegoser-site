@@ -25,17 +25,14 @@
     <!-- App Bar -->
     <AppBar>
       <svelte:fragment slot="lead">
-        <strong class="text-xl uppercase">artegoser</strong>
-      </svelte:fragment>
-      <svelte:fragment slot="trail">
-        <a
-          class="btn btn-sm variant-ghost-surface"
-          href="https://blog.artegoser.ru"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="/">
+          <strong class="text-xl mx-5 uppercase">artegoser</strong>
+        </a>
+        <a class="btn btn-sm variant-ghost-surface" href="/blog">
           {$_("blog.title")}
         </a>
+      </svelte:fragment>
+      <svelte:fragment slot="trail">
         <a
           class="btn btn-sm variant-ghost-surface"
           href="https://github.com/skeletonlabs/skeleton"
