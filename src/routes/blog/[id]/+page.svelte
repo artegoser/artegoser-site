@@ -2,15 +2,13 @@
   export let data;
 
   import Author from "$lib/components/Author.svelte";
-  import { onMount } from "svelte";
-  import { storeHighlightJs } from "@skeletonlabs/skeleton";
   import { _ } from "svelte-i18n";
 
   const { html, meta, readingTime } = data;
 </script>
 
 <svelte:head>
-  <title>{meta.title}</title>
+  <title>{meta.title} | artegoser</title>
   <meta name="description" content={meta.seoDescription} />
   <meta name="keywords" content={meta.tags} />
   <meta name="author" content="artegoser" />
@@ -23,7 +21,7 @@
     {meta.title}
   </div>
 
-  <div class="flex justify-center">
+  <div class="flex flex-wrap justify-center px-5">
     <Author
       name="Artegoser"
       img="https://avatars.githubusercontent.com/u/59178854?v=4"
@@ -37,7 +35,7 @@
   </div>
 
   {#each meta.coAuthors || [] as author}
-    <div class="flex justify-center mt-10">
+    <div class="flex flex-wrap justify-center mt-10 px-5">
       <Author
         img={author.img}
         name={author.name}

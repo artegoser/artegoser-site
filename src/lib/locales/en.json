@@ -1,8 +1,9 @@
 {
   "blog": {
-    "title": "Blog",
     "readingTime": "min read"
   },
-  "home": "Home",
-  "projects": "Projects"
+  "nav": {
+    "blog": "Blog",
+    "home": "Home"
+  }
 }

@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2"
+  class="container mx-auto grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-2"
 >
   {#each posts as post}
     <a href="/blog/{post.id}">

@@ -17,38 +17,64 @@
   storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
   import { _ } from "svelte-i18n";
+
+  import {
+    initializeStores,
+    Drawer,
+    getDrawerStore,
+  } from "@skeletonlabs/skeleton";
+  import SideLinks from "$lib/components/SideLinks.svelte";
+  import Navigation from "$lib/components/Navigation.svelte";
+
+  initializeStores();
+
+  const drawerStore = getDrawerStore();
+
+  function drawerOpen(): void {
+    drawerStore.open({});
+  }
 </script>
 
+<Drawer>
+  <div class="p-4">
+    <strong class="text-xl uppercase">Artegoser</strong>
+    <hr class="my-2" />
+    <Navigation type="vertical" />
+    <hr class="my-2" />
+    <SideLinks />
+  </div>
+</Drawer>
 <!-- App Shell -->
 <AppShell>
   <svelte:fragment slot="header">
     <!-- App Bar -->
     <AppBar>
       <svelte:fragment slot="lead">
+        <button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+          <span>
+            <svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
+              <rect width="100" height="20" />
+              <rect y="30" width="100" height="20" />
+              <rect y="60" width="100" height="20" />
+            </svg>
+          </span>
+        </button>
+
         <a href="/">
-          <strong class="text-xl mx-5 uppercase">artegoser</strong>
+          <strong class="text-xl uppercase">artegoser</strong>
         </a>
-        <a class="btn btn-sm variant-ghost-surface" href="/blog">
-          {$_("blog.title")}
-        </a>
+        <span class="divider-vertical h-7 mx-5 invisible lg:visible" />
+        <!-- <a class="nav-link invisible lg:visible" href="/blog">
+          {$_("nav.blog")}
+        </a> -->
+        <div class="invisible lg:visible">
+          <Navigation />
+        </div>
       </svelte:fragment>
       <svelte:fragment slot="trail">
-        <a
-          class="btn btn-sm variant-ghost-surface"
-          href="https://github.com/skeletonlabs/skeleton"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub
-        </a>
-        <a
-          class="btn btn-sm variant-ghost-surface"
-          href="https://t.me/artegosr"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Telegram
-        </a>
+        <div class="invisible lg:visible">
+          <SideLinks />
+        </div>
       </svelte:fragment>
     </AppBar>
   </svelte:fragment>
