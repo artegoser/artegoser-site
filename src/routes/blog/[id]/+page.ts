@@ -15,7 +15,7 @@ interface IPageData {
   id: string;
   html: string;
   meta: IMetaData;
-  readingTime: string;
+  readingTime: number;
 }
 
 export async function load({ params }): Promise<IPageData> {
@@ -32,7 +32,7 @@ export async function load({ params }): Promise<IPageData> {
         tags: "not-found",
         datePublished: new Date().toISOString(),
       },
-      readingTime: "0 min read",
+      readingTime: 0,
     };
   }
 
@@ -42,6 +42,6 @@ export async function load({ params }): Promise<IPageData> {
     id: params.id,
     html: parsed.html,
     meta: parsed.metadata as IMetaData,
-    readingTime: readingTime(text).text,
+    readingTime: readingTime(text),
   };
 }

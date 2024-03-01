@@ -1,5 +1,8 @@
 {
-  "blog": "Blog",
+  "blog": {
+    "title": "Blog",
+    "readingTime": "min read"
+  },
   "home": "Home",
   "projects": "Projects"
 }

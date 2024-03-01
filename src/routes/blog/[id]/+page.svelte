@@ -2,6 +2,7 @@
   export let data;
 
   import Author from "$lib/components/Author.svelte";
+  import { _, locale } from "svelte-i18n";
 
   const { id, html, meta, readingTime } = data;
 </script>
@@ -22,10 +23,13 @@
 
   <div class="flex justify-center">
     <Author
+      name="Artegoser"
+      img="https://avatars.githubusercontent.com/u/59178854?v=4"
+      link="https://github.com/artegoser"
       dots={[
         ...(meta.dots || []),
         new Date(meta.datePublished).toLocaleDateString(),
-        readingTime,
+        `${readingTime} ${$_("blog.readingTime")}`,
       ]}
     />
   </div>
@@ -36,7 +40,7 @@
         img={author.img}
         name={author.name}
         link={author.link}
-        dots={[...(author.dots || [])]}
+        dots={author.dots}
       />
     </div>
   {/each}

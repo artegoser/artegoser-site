@@ -3,7 +3,7 @@ export function readingTime(text: string) {
   const words = text.trim().split(/\s+/).length;
   const time = Math.ceil(words / wpm);
 
-  return { text: `${time} min read`, time };
+  return time;
 }
 
 import rehypeStringify from "rehype-stringify";

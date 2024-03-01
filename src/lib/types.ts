@@ -6,8 +6,8 @@ export interface ILink {
 export type Dot = string | ILink;
 
 export interface IAuthor {
-  img: string;
   name: string;
-  link: string;
+  link?: string;
+  img?: string;
   dots?: Dot[];
 }

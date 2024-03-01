@@ -56,7 +56,7 @@
           target="_blank"
           rel="noreferrer"
         >
-          {$_("blog")}
+          {$_("blog.title")}
         </a>
         <a
           class="btn btn-sm variant-ghost-surface"
