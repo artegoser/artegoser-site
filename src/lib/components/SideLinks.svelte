@@ -1,13 +1,12 @@
 <div class="btn-group variant-ghost-surface">
   <a
-    class=""
-    href="https://github.com/skeletonlabs/skeleton"
+    href="https://github.com/artegoser"
     target="_blank"
     rel="noreferrer"
   >
     GitHub
   </a>
-  <a class="" href="https://t.me/artegosr" target="_blank" rel="noreferrer">
+  <a href="https://t.me/artegosr" target="_blank" rel="noreferrer">
     Telegram
   </a>
 </div>
