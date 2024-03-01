@@ -1,9 +1,12 @@
+import type { Dot, IAuthor } from "$lib/types.js";
 import { parseMarkdown, readingTime } from "$lib/utils";
 
 interface IMetaData {
   title: string;
   tags: string;
   datePublished: string;
+  coAuthors?: IAuthor[];
+  dots?: Dot[];
   seoTitle?: string;
   seoDescription?: string;
 }

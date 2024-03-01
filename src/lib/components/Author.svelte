@@ -1,18 +1,15 @@
 <script lang="ts">
-  interface ILink {
-    text: string;
-    link: string;
-  }
+  import type { Dot } from "$lib/types";
 
   export let img = "https://avatars.githubusercontent.com/u/59178854?v=4";
   export let name = "Artegoser";
   export let link = "https://github.com/artegoser";
-  export let dots: string[] | ILink[] = [];
+  export let dots: Dot[] = [];
 
   import { Avatar } from "@skeletonlabs/skeleton";
 </script>
 
-<Avatar src={img} width="w-8" rounded="rounded-full" />
+<Avatar src={img} width="h-8" rounded="rounded-full" />
 <a href={link} class="font-bold ml-2">{name}</a>
 
 {#each dots as dot}
