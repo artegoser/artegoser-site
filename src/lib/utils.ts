@@ -15,34 +15,19 @@ import { unified } from "unified";
 import { matter } from "vfile-matter";
 import rehypeHighlight from "rehype-highlight";
 
-// Highlight JS
-import xml from "highlight.js/lib/languages/xml"; // for HTML
-import css from "highlight.js/lib/languages/css";
-import javascript from "highlight.js/lib/languages/javascript";
-import typescript from "highlight.js/lib/languages/typescript";
-import bash from "highlight.js/lib/languages/bash";
-import json from "highlight.js/lib/languages/json";
+import languages from "./hljs-langs";
 
 export async function parseMarkdown(markdown: string) {
   const result = await unified()
     .use(remarkParse)
     .use(remarkFrontmatter, ["yaml"])
     .use(remarkGfm)
-    .use(remarkRehype)
-    .use(rehypeStringify)
-    .use(rehypeHighlight, {
-      languages: {
-        xml,
-        css,
-        javascript,
-        typescript,
-        bash,
-        json,
-      },
-    })
-    .use(() => (tree, file) => {
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeHighlight, { languages })
+    .use(() => (_, file) => {
       matter(file);
     })
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(markdown);
 
   const metadata = result.data.matter;

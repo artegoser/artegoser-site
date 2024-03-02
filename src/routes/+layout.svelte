@@ -26,6 +26,8 @@
   import SideLinks from "$lib/components/SideLinks.svelte";
   import Navigation from "$lib/components/Navigation.svelte";
 
+  import { Icon, Bars3 } from "svelte-hero-icons";
+
   initializeStores();
 
   const drawerStore = getDrawerStore();
@@ -51,13 +53,7 @@
     <AppBar>
       <svelte:fragment slot="lead">
         <button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
-          <span>
-            <svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
-              <rect width="100" height="20" />
-              <rect y="30" width="100" height="20" />
-              <rect y="60" width="100" height="20" />
-            </svg>
-          </span>
+          <Icon src={Bars3} class="w-6 h-6" />
         </button>
 
         <a href="/">

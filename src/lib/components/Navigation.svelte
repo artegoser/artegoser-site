@@ -25,7 +25,7 @@
 
 <div class={`flex ${type === "vertical" ? "flex-col" : "flex-row"}`}>
   {#each nav as item}
-    <a href={item.link} class="strong-text" on:click={drawerClose}
+    <a href={item.link} class="font-bold ml-2 text-xl" on:click={drawerClose}
       >{item.name}</a
     >
   {/each}

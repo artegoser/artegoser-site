@@ -20,7 +20,7 @@
             src={post.cover}
             alt={`${post.title} cover`}
           />
-          <div class="strong-text">{post.title}</div>
+          <div class="font-bold ml-2">{post.title}</div>
         </header>
         <section class="p-4">{post.seoDescription}</section>
         <footer class="card-footer flex gap-2">
