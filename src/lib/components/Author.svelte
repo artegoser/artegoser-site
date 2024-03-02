@@ -13,12 +13,10 @@
 <a href={link} class="font-bold ml-2">{name}</a>
 
 {#each dots || [] as dot}
-  <div>
-    <span class="mx-3 font-bold text-slate-500">·</span>
-    {#if typeof dot === "string"}
-      <span class="font-bold text-slate-500">{dot}</span>
-    {:else}
-      <a href={dot.link} class="font-bold ml-2">{dot.text}</a>
-    {/if}
-  </div>
+  <div class="mx-3 font-bold text-slate-500">·</div>
+  {#if typeof dot === "string"}
+    <div class="font-bold text-slate-500">{dot}</div>
+  {:else}
+    <a href={dot.link} class="font-bold">{dot.text}</a>
+  {/if}
 {/each}

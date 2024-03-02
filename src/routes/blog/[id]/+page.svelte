@@ -24,16 +24,14 @@
 
   <div class="flex flex-wrap items-center justify-center px-5">
     <Icon src={BookOpen} class="mr-2 w-6 h-6" />
-    <div>
-      <span class="font-bold text-slate-500"
-        >{readingTime} {$_("blog.readingTime")}</span
-      >
+    <div class="font-bold text-slate-500">
+      {readingTime}
+      {$_("blog.readingTime")}
     </div>
-    <div>
-      <span class="mx-3 font-bold text-slate-500">·</span>
-      <span class="font-bold text-slate-500"
-        >{new Date(meta.datePublished).toLocaleDateString()}</span
-      >
+
+    <div class="mx-3 font-bold text-slate-500">·</div>
+    <div class="font-bold text-slate-500">
+      {new Date(meta.datePublished).toLocaleDateString()}
     </div>
   </div>
 
