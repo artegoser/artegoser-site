@@ -27,6 +27,7 @@
   import Navigation from "$lib/components/Navigation.svelte";
 
   import { Icon, Bars3 } from "svelte-hero-icons";
+  import { afterNavigate } from "$app/navigation";
 
   initializeStores();
 
@@ -35,6 +36,10 @@
   function drawerOpen(): void {
     drawerStore.open({});
   }
+
+  afterNavigate(() => {
+    document.getElementById("page")?.scrollTo(0, 0);
+  });
 </script>
 
 <Drawer>
@@ -75,5 +80,7 @@
     </AppBar>
   </svelte:fragment>
   <!-- Page Route Content -->
-  <slot />
+  <div id="page">
+    <slot />
+  </div>
 </AppShell>
