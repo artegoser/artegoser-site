@@ -16,7 +16,7 @@ body {
 }
 
 .glow {
-	filter: drop-shadow(0px 0px 25px #9791d4);
+	filter: drop-shadow(0px 0px 5px #9791d4);
 }
 
 .main-ico {

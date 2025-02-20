@@ -12,8 +12,8 @@
 </svelte:head>
 
 <div class="mx-8 my-2 flex flex-col items-center gap-8 max-sm:mx-2">
-	<div class="glow animate-float flex w-full max-w-lg items-center justify-center">
-		<img src="/logo.svg" alt="" class="main-ico w-full" />
+	<div class="glow flex w-full max-w-lg items-center justify-center">
+		<img src="/logo.svg" alt="" class="main-ico animate-float w-full" />
 		<div class="flex flex-col items-start justify-center gap-2">
 			<div class="big-text">ARTEGOSER</div>
 			<div class="text-lg font-semibold text-zinc-400">
